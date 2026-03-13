@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'tailwindcss';
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  letter-spacing: -1px;
+}
+
+body {
+  background-color: #f1f1f1;
+  font-size: 14px;
+}
+
+
+@layer components {
+
+  /* TYPOGRAHY */
+  .title {
+    @apply font-medium text-4xl;
+  }
+
+  .subtitle {
+    @apply font-medium text-sm;
+  }
+
+  .cartNum {
+    @apply text-[10px] rounded-full h-5 w-5 items-center flex justify-center bg-black text-white
+  }
+
+  .navbox {
+    @apply flex gap-5 bg-[#fdfdfd] py-3 px-1 rounded-full shadow-sm;
+  }
+
+  .container {
+    @apply flex flex-1 h-screen pt-28 justify-center;
+  }
+
+  .cartCard {
+    @apply rounded-2xl bg-[#fdfdfd] p-3 shadow-sm flex flex-row;
+  }
+
+  .cartCardOutline {
+    @apply bg-transparent border border-mist-50 flex items-start rounded-3xl w-fit;
+  }
+
+  .productCard {
+    @apply rounded-2xl bg-[#fdfdfd] p-3 shadow-md w-52 h-72;
+  }
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
