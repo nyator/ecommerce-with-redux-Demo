@@ -1,12 +1,12 @@
 import ProductsList from '../components/product/ProductsList'
 const Shop = () => {
   return (
-    <div className="container">
-      <div >
-        <h1 className="title">
+    <div className="main">
+      <div className='flex flex-col items-center space-y-3' >
+        {/* <h1 className="title">
           Shop
-        </h1>
-        
+        </h1> */}
+
         <div>
           <ProductsList />
         </div>

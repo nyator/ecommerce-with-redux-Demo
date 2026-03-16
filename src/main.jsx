@@ -5,9 +5,10 @@ import './index.css'
 import { store } from './store/store.js'
 import { Provider } from 'react-redux'
 
-
-import { createBrowserRouter } from "react-router";
-import { RouterProvider } from "react-router/dom";
+import { createBrowserRouter } from "react-router"
+import { RouterProvider } from "react-router/dom"
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import MainLayout from './layouts/MainLayout.jsx'
 import Shop from './pages/Shop.jsx'
@@ -22,23 +23,10 @@ const router = createBrowserRouter([
     Component: MainLayout,
     children: [
       { index: true, Component: Home },
-      {
-        path: "shop",
-        Component: Shop
-      },
-      {
-        path: "cart",
-        Component: Cart
-      },
-      {
-        path: "faqs",
-        Component: Faqs
-      },
-      {
-        path: "checkout",
-        Component: Checkout
-      },
-
+      { path: "shop", Component: Shop },
+      { path: "cart", Component: Cart },
+      { path: "faqs", Component: Faqs },
+      { path: "checkout", Component: Checkout },
     ],
   },
 ]);
@@ -46,9 +34,15 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router}>
-        <MainLayout />
-      </RouterProvider>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop
+        closeOnClick
+        draggable
+        pauseOnHover />
+      <RouterProvider router={router} />
     </Provider>
   </StrictMode>
 )

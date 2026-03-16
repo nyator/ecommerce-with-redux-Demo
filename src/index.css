@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
   }
 
   .subtitle {
-    @apply font-medium text-sm;
+    @apply font-medium ;
   }
 
   .cartNum {
@@ -30,23 +30,41 @@ body {
   }
 
   .navbox {
-    @apply flex gap-5 bg-[#fdfdfd] py-3 px-1 rounded-full shadow-sm;
+    @apply flex gap-5 bg-[#f0f1f0] py-3 px-1 rounded-full shadow-sm;
   }
 
-  .container {
-    @apply flex flex-1 h-screen pt-28 justify-center;
+  /* BUTTON */
+  .btn-primary {
+    @apply w-full border-[1.5px] border-black text-black hover:bg-black hover:text-white font-normal py-1.5 px-3 rounded-3xl shadow-md transition-all duration-300 transform text-sm;
+  }
+
+  /* CONTAINERS */
+  .main {
+    @apply flex h-screen pt-28 justify-center mx-4;
   }
 
   .cartCard {
-    @apply rounded-2xl bg-[#fdfdfd] p-3 shadow-sm flex flex-row;
+    @apply rounded-2xl bg-[#fdfdfd73] p-3 shadow-sm flex flex-row;
   }
 
   .cartCardOutline {
-    @apply bg-transparent border border-mist-50 flex items-start rounded-3xl w-fit;
+    @apply bg-[#f0f1f0] border border-mist-50 flex items-start rounded-3xl w-fit shadow-sm;
   }
 
   .productCard {
-    @apply rounded-2xl bg-[#fdfdfd] p-3 shadow-md w-52 h-72;
+    @apply rounded-2xl bg-linear-0 from-gray-200 to-transparent p-3 w-44 h-60 md:w-52 md:h-72 flex flex-col items-center justify-center;
+  }
+
+  .productCardSkeleton {
+    @apply rounded-2xl bg-gray-100 p-3 w-44 h-60 md:w-52 md:h-72 flex flex-col items-center justify-center;
+  }
+
+  .toast {
+    @apply rounded-2xl bg-gray-100 p-3 w-44 h-20 flex flex-col items-center justify-center;
+  }
+
+  .cartItem {
+    @apply flex bg-amber-200;
   }
 
 }

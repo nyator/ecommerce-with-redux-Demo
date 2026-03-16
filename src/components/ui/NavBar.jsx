@@ -7,9 +7,9 @@ import Button from "./Button";
 import Cart from "./Cart";
 
 const navlinks = [
-    { name: "Home", href: "/" },
+    // { name: "Home", href: "/" },
     { name: "Shop", href: "/shop" },
-    { name: "FAQs   ", href: "/faqs" },
+    // { name: "FAQs   ", href: "/faqs" },
 ];
 
 const Navbar = () => {
@@ -24,7 +24,7 @@ const Navbar = () => {
                 className="fixed top-0 left-0 right-0 z-50 flex justify-around items-center mb-24 px-4 md:px-20 py-4 border-b border-white/10"
             >
                 <Link>
-                    <img src={""} alt="" />
+                    {/* <img src={""} alt="" /> */}
                 </Link>
                 <ul className="navbox">
                     {navlinks.map((link) => (
