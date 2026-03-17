@@ -26,16 +26,14 @@ const ProductsList = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                 {items.map(product => (
                     <div key={product.id} className="group cartCardOutline relative">
-                        {/* <div className="bg-white border border-gray-200 rounded-3xl shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden hover:-translate-y-1 h-75"> */}
                         <div className="productCard">
                             <button
                                 onClick={() => dispatch(waddItem(product))}
-                                className="absolute top-3 right-3 z-10 bg-gray-200 hover:bg-gray-300  p-1.5 rounded-full shadow-lg transition-all duration-200 w-9 h-9 flex items-center justify-center opacity-0 group-hover:opacity-100 hover:scale-110 text-sm"
+                                className="absolute top-3 right-3 z-10 bg-gray-200 p-1.5 rounded-full shadow-lg transition-all duration-200 w-7 h- flex items-center justify-center opacity-0 group-hover:opacity-100 hover:scale-110 text-sm"
                                 title="Add to Wishlist"
                             >
                                 <TiHeartFullOutline />
                             </button>
-                            {/* <div className="bg-gray-100 p-2 rounded-2xl"> */}
                             <img
                                 src={product.image}
                                 alt={product.title}

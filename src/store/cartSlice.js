@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { toast } from 'react-toastify';
-import nofity from '../utils/Notify';
+import notify from '../utils/Notify';
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -17,12 +16,12 @@ const cartSlice = createSlice({
         notify.success("Added to cart", action.payload.name)
       } else {
         state.items[index].quantity++;
-        toast.info("item quantity updated");
+        notify.info("item quantity updated");
       }
     },
     removeItem: (state, action) => {
       state.items = state.items.filter(item => item.id !== action.payload);
-      toast.info("Item removed from cart");
+      notify.info("Item removed from cart");
     },
     decreaseQty: (state, action) => {
       const index = state.items.findIndex(item => item.id === action.payload);
@@ -30,14 +29,14 @@ const cartSlice = createSlice({
 
       if (state.items[index].quantity === 1) {
         state.items.splice(index, 1);
-        toast.info("Item removed from cart");
+        notify.info("Item removed from cart");
       } else {
         state.items[index].quantity--;
       }
     },
     clearCart: (state) => {
       state.items = [];
-      toast.info("Cart cleared");
+      notify.info("Cart cleared");
     }
   },
 })
