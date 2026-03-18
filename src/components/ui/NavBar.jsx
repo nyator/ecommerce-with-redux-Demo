@@ -7,15 +7,13 @@ import Button from "./Button";
 import Cart from "./Cart";
 
 const navlinks = [
-    // { name: "Home", href: "/" },
+    { name: "Home", href: "/" },
     { name: "Shop", href: "/shop" },
     // { name: "FAQs   ", href: "/faqs" },
 ];
 
 const Navbar = () => {
     const cartItems = useSelector(state => state.cart.items)
-    // const [activeNav, setActiveNav] = useState("Home");
-
     const location = useLocation();
 
     return (
@@ -31,7 +29,7 @@ const Navbar = () => {
                         <li key={link.name}>
                             <Link
                                 to={link.href}
-                                className={`hover:bg-[#f1f1f165] transition-all duration-200 ease-in-out tracking-tight py-2 px-4 rounded-full ${location.pathname === link.href ? "bg-[#f1f1f1] " : ""
+                                className={`hover:bg-[#e8eaed]  transition-all duration-200 ease-in-out tracking-tight py-2 px-4 rounded-full border-mist-50 ${location.pathname === link.href ? "bg-[#e8eaed] border" : ""
                                     }`}
                             >
                                 {link.name}

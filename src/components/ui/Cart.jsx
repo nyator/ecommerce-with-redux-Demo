@@ -11,7 +11,7 @@ export default function Cart() {
         className="navbox px-3 relative"
         to={'/cart'}>
         <CgShoppingBag size={20} />
-        <span className="absolute -top-2 right-0 cartNum">{cartItems.length || "0"}</span>
+        <span className="absolute -top-2 right-0 cartNum border-mist-50s">{cartItems.length || "0"}</span>
         {/* <Button /> */}
       </Link>
     </>

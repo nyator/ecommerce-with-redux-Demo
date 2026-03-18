@@ -4,10 +4,12 @@ import './index.css'
 
 import { store } from './store/store.js'
 import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistor } from './store/store'
 
 import { createBrowserRouter } from "react-router"
 import { RouterProvider } from "react-router/dom"
-import { ToastContainer } from 'react-toastify'
+import { ToastContainer, Zoom } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 import MainLayout from './layouts/MainLayout.jsx'
@@ -35,14 +37,19 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
       <ToastContainer
-        position="bottom-center"
+        position="top-center"
         autoClose={1000}
         hideProgressBar={true}
         newestOnTop
         closeOnClick
         draggable
-        pauseOnHover />
-      <RouterProvider router={router} />
+        pauseOnHover
+        transition={Zoom}
+
+         />
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={router} />
+      </PersistGate>
     </Provider>
   </StrictMode>
 )

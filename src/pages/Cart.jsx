@@ -1,7 +1,7 @@
 import { useStore } from '../Hooks/useStore'
 import { removeItem, addItem, decreaseQty } from '../store/cartSlice'
 import OrderSum from '../components/cart/orderSum'
-import {LuArrowLeftFromLine, LuMinus, LuPlus, LuTrash2 } from 'react-icons/lu';
+import { LuArrowLeftFromLine, LuMinus, LuPlus, LuTrash2 } from 'react-icons/lu';
 
 const Cart = () => {
   const { items, dispatch } = useStore("cart");
@@ -22,7 +22,7 @@ const Cart = () => {
     <div>
       <div className="main">
         {/* <h1 className="title">Your Shopping Cart</h1> */}
-        <div className="flex flex-col w-full md:flex-row gap-10 justify- items-start relative">
+        <div className="flex flex-col w-full md:flex-row gap-2 justify-start items-end md:items-start relative">
 
           {/* Items List */}
           <div className='bg-[#f0f1f0] shadow-lg border border-mist-300 flex items-start rounded-3xl p-1.5 w-full h-fit'>
@@ -68,8 +68,8 @@ const Cart = () => {
 
               ))}
             </div>
-      {/* <a href="/shop" className="underline mt-2">Browse Shop</a> */}
           </div>
+          <a href="/shop" className="underline mt-2 text-center w-full md:hidden"><LuArrowLeftFromLine className='inline-block mr-1' />Browse Shop</a>
 
           {/* Order Summary */}
           <div className="sticky top-10 max-w-xs md:max-w-7xl md:w-3/6">
@@ -77,6 +77,8 @@ const Cart = () => {
           </div>
         </div>
       </div>
+
+      {/* <a href="/shop" className="underline mt-2 text-center w-full bg-black text-white hidden md:block"><LuArrowLeftFromLine className='inline-block mr-1' />Browse Shop</a> */}
     </div>
   );
 }

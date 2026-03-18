@@ -8,6 +8,7 @@ import { addItem as waddItem } from "../../store/wishlistSlice"
 //UI
 import { TiHeartFullOutline } from "react-icons/ti";
 import ProductSkeleton from "../ui/ProductSkeleton"
+import StarRating from "../ui/StarRating"
 
 
 const ProductsList = () => {
@@ -23,9 +24,9 @@ const ProductsList = () => {
 
     return (
         <>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 space-x-6 space-y-6">
                 {items.map(product => (
-                    <div key={product.id} className="group cartCardOutline relative">
+                    <div key={product.id} onClick={""} className="group cartCardOutline relative">
                         <div className="productCard">
                             <button
                                 onClick={() => dispatch(waddItem(product))}
@@ -37,14 +38,14 @@ const ProductsList = () => {
                             <img
                                 src={product.image}
                                 alt={product.title}
-                                className="w-30 h-30 object-contain"
+                                className="w-17 h-17 md:w-30 md:h-30 object-contain"
                             />
-                            {/* </div> */}
                             <div className="p-5 pt-3 w-full">
                                 <p className=" text-[12px] text-gray-900 mb-1 line-clamp-2 leading-tight">
                                     {product.title}
                                 </p>
-                                <p className="text-sm font-bold text-gray-600 mb-1">${product.price}</p>
+                                <StarRating rate={product.rating.rate} count={product.rating.count} />
+                                <p className="text-sm font-bold text-black mb-1">${product.price}</p>
                                 <div>
 
                                     <button
@@ -52,9 +53,6 @@ const ProductsList = () => {
                                         onClick={() => dispatch(addItem(product))}
                                     >
                                         Add to Cart
-                                    </button>
-                                    <button className="bg-red-300">
-                                        {product.quality}
                                     </button>
                                 </div>
                             </div>

@@ -12,17 +12,19 @@ const cartSlice = createSlice({
 
       if (index === -1) {
         state.items.push({ ...action.payload, quantity: 1 });
-        // toast.success("item added to cart");
         notify.success("Added to cart", action.payload.name)
-      } else {
+      }
+      else {
         state.items[index].quantity++;
         notify.info("item quantity updated");
       }
     },
+
     removeItem: (state, action) => {
       state.items = state.items.filter(item => item.id !== action.payload);
       notify.info("Item removed from cart");
     },
+
     decreaseQty: (state, action) => {
       const index = state.items.findIndex(item => item.id === action.payload);
       if (index === -1) return;
@@ -30,10 +32,12 @@ const cartSlice = createSlice({
       if (state.items[index].quantity === 1) {
         state.items.splice(index, 1);
         notify.info("Item removed from cart");
-      } else {
+      }
+      else {
         state.items[index].quantity--;
       }
     },
+
     clearCart: (state) => {
       state.items = [];
       notify.info("Cart cleared");

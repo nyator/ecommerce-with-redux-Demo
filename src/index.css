@@ -22,7 +22,7 @@ body {
   }
 
   .subtitle {
-    @apply font-medium ;
+    @apply font-medium;
   }
 
   .cartNum {
@@ -30,12 +30,12 @@ body {
   }
 
   .navbox {
-    @apply flex gap-5 bg-[#f0f1f0] py-3 px-1 rounded-full shadow-sm;
+    @apply flex gap-5 bg-[#f0f1f0] border border-mist-50 py-3 px-1 rounded-full shadow-sm;
   }
 
   /* BUTTON */
   .btn-primary {
-    @apply w-full border-[1.5px] border-black text-black hover:bg-black hover:text-white font-normal py-1.5 px-3 rounded-3xl shadow-md transition-all duration-300 transform text-sm;
+    @apply w-full border-[1px] border-mist-50 text-black/90 hover:bg-black/20 hover:text-white font-normal py-1.5 px-3 rounded-3xl shadow-md transition-all duration-300 transform text-xs md:text-sm;
   }
 
   /* CONTAINERS */

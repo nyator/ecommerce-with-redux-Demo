@@ -6,7 +6,9 @@ function MainLayout() {
     return (
         <>
             <Navbar />
-            <Outlet />
+            <div className=' md:px-10'>
+                <Outlet />
+            </div>
         </>
     )
 }

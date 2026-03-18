@@ -17,7 +17,7 @@ const OrderSum = ({ items }) => {
                     <p className='flex justify-between text-xs items-center'>Discount <span className='font-semibold '>$ {discount}</span></p>
                     <p className='flex justify-between text-xs items-center'>Delivery <span className='font-semibold '>$ {delivery}</span></p>
                     <div className='w-full h-0.5 bg-gray-200 rounded-full my-3'></div>
-                    <p className='flex justify-between text-xs items-center font-bold'>Total <span>$ {total.toFixed(0)}</span></p>
+                    <p className='flex justify-between text-sm items-center font-semibold'>Total <span>$ {total.toFixed(0)}</span></p>
 
                 </div>
 
